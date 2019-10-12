@@ -17,5 +17,7 @@ Client.on("message", message => {
 
     if(message.content == "!ping"){
         message.channel.send(":ping_pong: Pong!")
+    }else if(message.content.includes("!")){
+        message.channel.send("BRUH!")
     }
 })
