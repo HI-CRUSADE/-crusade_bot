@@ -15,11 +15,25 @@ Client.on("message", message => {
 
     if(message.author.id == Client.user.id) return
 
-    if(message.content == "!ping"){
-        message.channel.send(":ping_pong: Pong!")
-    }else if(message.content == "!HI_CRUSADE"){
-        message.channel.send("HI_CRUSADE!")
-    }else if(message.content.includes("!")){
-        message.channel.send("BRUH!")
+    var Prefix = '!'
+    var words = message.content.split(' ')
+    var command = words[0]
+    var istrue = false
+
+    switch(command){
+        case Prefix + 'HI_CRUSADE': {
+            message.channel.send("HI_CRUSADE!")
+            istrue
+            break
+        }
+        case Prefix + 'ping':{
+            message.channel.send(":ping_pong: Pong!")
+            istrue
+            break
+        }
+        
+    }
+    if(!istrue && message.content.includes('!')){
+        message.channel.send('BRUH!')
     }
 }) 
