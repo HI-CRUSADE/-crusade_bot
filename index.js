@@ -23,12 +23,12 @@ Client.on("message", message => {
     switch(command){
         case Prefix + 'HI_CRUSADE': {
             message.channel.send("HI_CRUSADE!")
-            istrue
+            istrue = true
             break
         }
         case Prefix + 'ping':{
             message.channel.send(":ping_pong: Pong!")
-            istrue
+            istrue = true
             break
         }
         
